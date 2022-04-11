@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Circles from "./components/Circles";
+import Buttons from "./components/Buttons";
+import Overlay from "./components/Overlay";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+class App extends Component {
+  // Names must match props.firstname in View.js
+  // state = {};
+
+  startGame = () => {};
+  endGame = () => {};
+  reloadGame = () => {};
+
+  //
+  render() {
+    return (
+      <div className="container">
+        <h1>SpeedGame (React)</h1>
+        <p className="score-line">
+          Your score: <span className="title-score">0</span>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+        <Circles />
+        <Buttons />
+        <Overlay />
+      </div>
+    );
+  }
 }
 
 export default App;
